@@ -1,0 +1,18 @@
+<div class="col-md-5">
+    <label class="text-danger">Load Test(Build Number): </label>
+    <select onchange="getComparision(document.getElementById('current').value, this.value);" id="baseline" name="baseline">
+        <option value="{{ baselineTest }}" >{{ baselineTest }} (Baseline)</option>
+        {% for build in allResultBuildNumber %}
+            <option value="{{ build }}">{{ build }}</option>
+        {% endfor %}
+    </select>
+</div>
+<div class="col-md-5 col-md-offset-2">
+    <label class="text-danger">Load Test(Build Number): </label>
+    <select onchange="getComparision(this.value, document.getElementById('baseline').value);" id="current" name="current">
+        <option value="{{ buildNumber }}" >{{ buildNumber }} (Current)</option>
+        {% for build in allResultBuildNumber %}
+            <option value="{{ build }}">{{ build }}</option>
+        {% endfor %}
+    </select>
+</div>

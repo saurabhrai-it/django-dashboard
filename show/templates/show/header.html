@@ -1,0 +1,20 @@
+{% load static %}
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container" style="padding-left:0px;">
+            <div class="navbar-header">
+                <a href="#" id="goTop" style="cursor:default;"><img src="{% static 'img/qaMaxLogo.jpg' %}" height="50px" style="float:left;margin-left:-90px;"/></a>
+                <a class="navbar-brand" style="cursor:default;font-size: 14px;font-weight:600;" href="#">&nbsp;&nbsp;&nbsp;SSO REPORTS</a>
+                <a class="navbar-brand" style="cursor:default;font-size: 14px;" href="#">&nbsp;&nbsp;&nbsp;Env : <span class="text-uppercase">{{loadTestData.Environment}}</span></a>
+                <a class="navbar-brand" style="font-size: 14px;" href="https://soajenkins-loadtest.cengage.info/view/SSO_OLR/job/SSO-OLRWebService-GatlingPipeline/{{ buildNumber }}/">&nbsp;&nbsp;&nbsp;Jenkins Build NUMBER : {{ buildNumber }}</a>
+                <a class="navbar-brand" style="cursor:default;font-size: 14px;" href="#">Start Time : {{ testStartTime }}</a>
+            </div>
+            <div id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#TestReport" data-toggle="tab"><strong>Test Report</strong></a></li>
+                    <li><a href="#ComparisonTab" data-toggle="tab"><strong>Comparison</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

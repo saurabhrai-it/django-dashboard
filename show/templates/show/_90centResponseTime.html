@@ -1,0 +1,125 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/highcharts.css' %}" />
+<script src="{% static 'js/highstock.js' %}"></script>
+
+<br/>
+<div class="text-center" id="90centMod"  style="background-color:#46C7C7;margin-right:-11%;margin-bottom:10px;margin-top:25px;border-radius:10px;">
+    <button type="button" class="btn btn-outline-info btn-xs" style="background-color: Transparent;border: none;outline:none;" >
+        <h3 class="text-center" style="color:white;">90% Response Time Graph vs Active User</h3>
+    </button>
+</div>
+<div id="90cent" style="height: 400px;"></div>
+
+<script>
+
+Highcharts.stockChart('90cent', {
+
+    chart: {
+        zoomType: 'x'
+    },
+    credits: { enabled: false },
+  legend: {
+    enabled: true,
+    floating: true,
+    y: -55,
+    borderWidth: 0,
+    itemStyle: { fontWeight: "normal" }
+  },
+    xAxis: {
+         type: 'datetime',
+         ordinal: false,
+         maxZoom: 10000
+    },
+  yAxis: [
+    {
+      min: 0,
+      title: {
+        text: 'Response Time (ms)',
+        style: { color: '#4572A7' }
+      },
+      opposite: false
+    }, {
+      min: 0,
+      title: {
+        text: 'Active Users',
+        style: { color: '#FF9D00' }
+      },
+      opposite: true
+    }
+  ],
+    plotOptions: {
+    arearange: { lineWidth: 1 },
+    series: {
+      dataGrouping: { enabled: false }
+      }
+    },
+
+    rangeSelector: {
+    rangeSelector: { align: "left" },
+    buttonSpacing: 0,
+    buttonTheme: {
+      fill: 'LightGrey',
+      padding: 1,
+      stroke: 'Black',
+      'stroke-width': 0.25,
+      style: {
+        color: 'Black',
+        fontWeight: 'bold',
+      },
+      states: {
+        stroke: 'Black',
+        'stroke-width': 0.25,
+        hover: {
+          fill: 'DarkGrey',
+          style: { color: 'black' }
+        },
+        select: {
+          fill: 'DarkOrange',
+          style: { color: 'white' }
+        }
+      }
+    },
+    buttons : [
+      {
+        type : 'minute',
+        count : 1,
+        text : '1m'
+      }, {
+        type : 'minute',
+        count : 10,
+        text : '10m'
+      }, {
+        type : 'hour',
+        count : 1,
+        text : '1h'
+      }, {
+        type : 'all',
+        count : 1,
+        text : 'All'
+      }
+    ],
+    selected : 3,
+    inputEnabled : false
+  },
+
+    series: [
+        {
+            pointInterval: 1000,
+            tooltip: { yDecimals: 0, ySuffix: 'ms' },
+            type : 'area',
+            yAxis: 0,
+            zIndex: 10,
+                name: '90% line',
+                data: {{90centData}}
+        },
+        {
+            color: '#FF9D00',
+            name: 'Active Users',
+            tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 },
+            yAxis: 1,
+            zIndex: 20,
+            data: {{userData}}
+        }
+    ]
+});
+</script>

@@ -1,0 +1,129 @@
+<!doctype HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+    <!--<script src="/static/highcharts.js"></script>-->
+    <!--<script src="/static/boost.js"></script>-->
+    <!--<script src="/static/exporting.js"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.6/css/highcharts.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.6/js/highstock.js"></script>
+
+</head>
+
+<div id="container2" style="height: 400px; max-width: 800px; margin: 0 auto"></div>
+
+<script>
+
+Highcharts.stockChart('container2', {
+
+    chart: {
+        zoomType: 'x'
+    },
+    credits: { enabled: false },
+  legend: {
+    enabled: true,
+    floating: true,
+    y: -55,
+    borderWidth: 0,
+    itemStyle: { fontWeight: "normal" }
+  },
+    xAxis: {
+         type: 'datetime',
+         ordinal: false,
+         maxZoom: 10000
+    },
+  yAxis: {
+      min: 0,
+      title: {
+        text: 'Response Time (ms)',
+        style: { color: '#4572A7' }
+      }
+    },
+    plotOptions: {
+    arearange: { lineWidth: 1 },
+    series: {
+      dataGrouping: { enabled: false }
+    }
+  },
+
+    rangeSelector: {
+    rangeSelector: { align: "left" },
+    buttonSpacing: 0,
+    buttonTheme: {
+      fill: 'LightGrey',
+      padding: 1,
+      stroke: 'Black',
+      'stroke-width': 0.25,
+      style: {
+        color: 'Black',
+        fontWeight: 'bold',
+      },
+      states: {
+        stroke: 'Black',
+        'stroke-width': 0.25,
+        hover: {
+          fill: 'DarkGrey',
+          style: { color: 'black' }
+        },
+        select: {
+          fill: 'DarkOrange',
+          style: { color: 'white' }
+        }
+      }
+    },
+    buttons : [
+      {
+        type : 'minute',
+        count : 1,
+        text : '1m'
+      }, {
+        type : 'minute',
+        count : 10,
+        text : '10m'
+      }, {
+        type : 'hour',
+        count : 1,
+        text : '1h'
+      }, {
+        type : 'all',
+        count : 1,
+        text : 'All'
+      }
+    ],
+    selected : 3,
+    inputEnabled : false
+  },
+
+    series: [
+        {
+            pointInterval: 1000,
+            tooltip: { yDecimals: 0, ySuffix: 'ms' },
+            type : 'area',
+            yAxis: 0,
+            zIndex: 10,
+                name: '{{b}} 90% line',
+                data: [
+                {% for result in label90 %}
+                [{{ result[0]*1000 }}, {{ result[1] }}],
+                {% endfor %}
+                ]
+        },
+        {
+            pointInterval: 1000,
+            color: '#33FFBD',
+            tooltip: { yDecimals: 0, ySuffix: 'ms' },
+            type : 'area',
+            yAxis: 0,
+            zIndex: 20,
+                name: '{{n}} 90% line',
+                data: [
+                {% for result in label90T %}
+                [{{ result[0]*1000 }}, {{ result[1] }}],
+                {% endfor %}
+                ]
+        }
+    ]
+});
+</script>
+</html>

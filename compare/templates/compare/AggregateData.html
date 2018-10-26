@@ -1,0 +1,33 @@
+<div class="text-center" id="aggTableCompMod"  style="background-color:#46C7C7;margin-bottom:10px;margin-top:25px;border-radius:10px;">
+    <button type="button" class="btn btn-outline-info btn-xs" style="background-color: Transparent;border: none;outline:none;" >
+        <h3 class="text-center" style="color:white;">Aggregate Report Comparison</h3>
+    </button>
+</div>
+<table id="aggTableComp" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th rowspan="2" class="text-center">Transaction</th>
+            <th colspan="3" class="text-center">Baseline Test : {{baseBuild}}</th>
+            <th colspan="3" class="text-center">Current Test : {{currBuild}}</th>
+            <th colspan="2" class="text-center">Delta</th>
+        </tr>
+        <tr>
+            <th>Samples</th>
+            <th>Mean Response Time(Sec)</th>
+            <th>Error %</th>
+            <th>Samples</th>
+            <th>Mean Response Time(Sec)</th>
+            <th>Error %</th>
+            <th>Response Time({{currBuild}} - {{baseBuild}})</th>
+            <th>Sample({{currBuild}} - {{baseBuild}})</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for scnTemp in aggReportComp %}
+    <tr>{% for scn in scnTemp %}
+        <td>{{ scn }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

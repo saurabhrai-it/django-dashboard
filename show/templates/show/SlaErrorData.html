@@ -1,0 +1,15 @@
+<h4 class="text-center" style="background-color:#C2B280;color:white;padding-top:10px;padding-bottom:10px;border-radius:10px;">Error Above SLA(>1%)</h4>
+<table class="table table-bordered table-hover" style="font-size:14px;">
+    <thead>
+    <tr>
+        <th>Transaction Name</th>
+        <th>Error %</th>
+    </tr>
+    </thead>
+    <tbody>{% for slaErr in slaErrorData %}
+    <tr>{% for err in slaErr %}
+        <td>{{ err }} </td>
+        {% endfor %}</tr>
+    {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+<h4 class="text-center" style="background-color:#C2B280;color:white;padding-top:10px;padding-bottom:10px;border-radius:10px;">Mean Response Time Above SLA(>3 Sec)</h4>
+<table class="table table-bordered table-hover" style="font-size:14px;">
+    <thead>
+    <tr>
+        <th>Transaction Name</th>
+        <th>Mean Response Time(Seconds)</th>
+    </tr>
+    </thead>
+    <tbody>{% for slaRes in slaResponseData %}
+    <tr>{% for res in slaRes %}
+        <td>{{ res }}</td>
+        {% endfor %}</tr>
+    {% endfor %}
+    </tbody>
+</table>

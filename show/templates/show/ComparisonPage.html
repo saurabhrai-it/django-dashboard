@@ -1,0 +1,84 @@
+<div class="row" style="margin-right:0;">
+    {% if '0' == baselineTest %}
+        <script>
+            function saveBaselineNumber(buildNumberBase){
+                if(buildNumberBase!=null)
+                    window.location = "{{ URL }}/fetcher/saveBaselineBuild/{{ buildNumber }}/" + encodeURIComponent(buildNumberBase);
+            }
+        </script>
+        <div class="jumbotron col-md-6 col-md-offset-3 text-center"  id="submitBaselineBuildNumber">
+            <label>Please Enter Baseline Build Number : </label>
+            <select id="buildNumber" contenteditable="true">
+                {% for buildNum in allResultBuildNumber %}
+                <option value="{{ buildNum }}">{{ buildNum }}</option>
+                {% endfor %}
+            </select>
+            <input type="Button" value = "Submit" onClick="saveBaselineNumber(buildNumber.value)" />
+        </div>
+    {% endif %}
+    {% if '0' != baselineTest %}
+        <div class="col-md-2" style="position:fixed;background-color:#f8f8f8;padding-right: 0px;">
+            {% include 'show/LeftComparisonMenu.html' %}
+        </div>
+
+        <div class="col-md-9 col-md-offset-3">
+            {% include 'show/BuildSelect.html' %}
+        </div>
+
+
+
+        <div class="col-md-10 col-md-offset-2" id="dataCompare">
+        </div>
+
+    <!--<style>-->
+        <!--#loading {-->
+            <!--display: none;-->
+            <!--border: 16px solid #f3f3f3;-->
+            <!--border-radius: 50%;-->
+            <!--border-top: 16px solid #3498db;-->
+            <!--width: 120px;-->
+            <!--height: 120px;-->
+            <!-- -webkit-animation: spin 2s linear infinite; /* Safari */-->
+            <!--animation: spin 2s linear infinite;-->
+        <!--}-->
+        <!--@-webkit-keyframes spin {-->
+          <!--0% { -webkit-transform: rotate(0deg); }-->
+          <!--100% { -webkit-transform: rotate(360deg); }-->
+        <!--}-->
+
+        <!--@keyframes spin {-->
+          <!--0% { transform: rotate(0deg); }-->
+          <!--100% { transform: rotate(360deg); }-->
+        <!--}-->
+    <!--</style>-->
+    <!--<div class="modal-body" id="loading">-->
+        <!---->
+        <!--Loading...-->
+    <!--</div>-->
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).ajaxStart(function () {
+                $("#loading").show();
+            }).ajaxStop(function () {
+                $("#loading").hide();
+            });
+        });
+
+        function getComparision(currTest, baseTest) {$(function(){
+        $.ajax(
+        {
+            type:"GET",
+            url: "{{ URL }}/compare/"+currTest+"/"+baseTest,
+            data: {},
+            success: function(data)
+            {
+                $( '#dataCompare' ).html(data);
+            }
+         })
+        });
+        }
+        window.onload = getComparision({{ buildNumber }},{{ baselineTest }});
+    </script>
+    {% endif %}
+</div>

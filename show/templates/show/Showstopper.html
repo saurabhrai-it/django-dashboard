@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Load Test : {{ buildNumber }}</title>
+    <link rel="icon" href="{% static 'img/qaMinLogo.ico' %}">
+
+</head>
+<body>
+
+<style>
+    .addHoverManager{
+        padding-left: 6px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        color:#777;
+        cursor:pointer;
+    }
+
+    .addHoverManager:hover{
+     color:white;
+     background-color: #808080;
+     font-weight:700;
+    }
+</style>
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'css/dataTables.bootstrap.min.css' %}" rel="stylesheet"/>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery.dataTables.min.js' %}"/>
+<script src="{% static 'js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<script>
+
+    $('ul.nav.navbar-nav.navbar-right li a').click(function() {
+            $(this).parent().addClass('active').siblings().removeClass('active');
+        });
+
+</script>
+
+{% include 'show/header.html' %}
+<!--<div class="modal-body" id="loading" style="display:none;">-->
+    <!--<img src="{% static 'img/wait.gif' %}" alt="Loading . .. ..."/>-->
+<!--</div>-->
+<style>
+    .modal-content  {
+        -webkit-border-radius: 400px !important;
+        -moz-border-radius: 400px !important;
+        border-radius: 400px !important;
+        width:200px;
+    }
+
+    div.modal {
+        position:fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -9em; /*set to a negative number 1/2 of your height*/
+        margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    }
+</style>
+<div class="modal" tabindex="-1" role="dialog" id="loading" style="display:none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="{% static 'img/monkeywalk.gif' %}" alt="Loading . .. ..." height="150" width="200" style="border-radius:150px;margin-left:-16px;"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $(document).ajaxStart(function () {
+                $("#loading").show();
+            }).ajaxStop(function () {
+                $("#loading").hide();
+            });
+        });
+</script>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="TestReport">
+        <div class="row" style="margin-right:0;">
+            <div class="col-md-2" style="position:fixed;background-color:#f8f8f8;padding-right: 0px;z-index:1000;">
+                {% include 'show/LeftMenu.html' %}
+            </div>
+
+            <div class="col-md-10 col-md-offset-2" id="testPupose">
+                {% include 'show/purposeoftest.html' %}
+            </div>
+
+            <div class="col-md-3 col-md-offset-2" id="summaryData">
+                {% include 'show/SummaryData.html' %}
+            </div>
+
+            <div class="col-md-4" id="SLA">
+                {% include 'show/SlaRespData.html' %}
+            </div>
+
+            <div class="col-md-3">
+                {% include 'show/SlaErrorData.html' %}
+            </div>
+
+            <div class="container col-md-offset-2 col-md-8" id="aggTableMod">
+                {% include 'show/AggregateTable.html' %}
+            </div>
+
+
+        <div class="col-md-offset-2 col-md-3" id="errorMod">
+            {% include 'show/errorDetail.html' %}
+        </div>
+
+        <div class="col-md-offset-1 col-md-4">
+            {% include 'show/errorAllDetail.html' %}
+        </div>
+
+        <div class="col-md-offset-2 col-md-8">
+            {% include 'show/_90centResponseTime.html' %}
+        </div>
+
+        <div class="col-md-offset-2 col-md-8">
+            {% include 'show/maxResponseTime.html' %}
+        </div>
+
+        <div class="col-md-offset-2 col-md-8">
+            {% include 'show/errorGraph.html' %}
+        </div>
+
+        <div class="col-md-offset-2 col-md-2" id="testMod">
+            {% include 'show/machineDetail.html' %}
+        </div>
+
+        <div class="col-md-4">
+            {% include 'show/buildDetail.html' %}
+        </div>
+
+        <div class="col-md-4">
+            {% include 'show/testParameters.html' %}
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-offset-2 col-md-4">
+                {% include 'show/scenarioDetail.html' %}
+            </div>
+        </div>
+
+        <script type="text/javascript">
+        $(document).ready(function() {
+              $('#aggTable').DataTable({
+                paging: false
+               });
+            });
+        </script>
+        </div>
+    </div>
+    <div class="tab-pane" id="ComparisonTab">
+        {% include 'show/ComparisonPage.html' %}
+    </div>
+</div>
+
+<div>
+    {% include 'show/footer.html' %}
+</div>
+
+<script type="text/javascript">
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+              event.preventDefault();
+              var hash = this.hash;
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 200, function(){
+                    window.location.hash = hash;
+              });
+            }
+          });
+        });
+</script>
+
+</body>
+</html>

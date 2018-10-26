@@ -1,0 +1,97 @@
+{% load static %}
+<!--<link rel="stylesheet" href="{% static 'css/highcharts.css' %}" />-->
+<!--<script src="{% static 'js/highstock.js' %}"></script>-->
+
+<br/>
+<div class="text-center" id="maxCompMod"  style="background-color:#46C7C7;margin-bottom:10px;margin-top:25px;border-radius:10px;">
+    <button type="button" class="btn btn-outline-info btn-xs" style="background-color: Transparent;border: none;outline:none;" >
+        <h3 class="text-center" style="color:white;">Max Response Time Graph Comparison</h3>
+    </button>
+</div>
+<div id="maxComp" style="height: 400px;"></div>
+
+<script>
+Highcharts.stockChart('maxComp', {
+
+    chart: {
+        zoomType: 'x',
+        type : 'line'
+    },
+    credits: { enabled: false },
+  legend: {
+    enabled: true,
+    floating: true,
+    y: -55,
+    borderWidth: 0,
+    itemStyle: { fontWeight: "normal" }
+  },
+    xAxis: {
+        type: 'linear',
+         ordinal: false,
+         visible:true,
+         labels: {   formatter: function () {return this.value;}},
+      title: {
+        text: 'Test Duration (ms)',
+        style: { color: '#4572A7' }
+      }
+    },
+  yAxis: {
+      min: 0,
+      title: {
+        text: 'Response Time (ms)',
+        style: { color: '#4572A7' }
+      },
+      opposite:false
+    },
+    rangeSelector: {
+    selected: 4,
+    inputEnabled: false,
+    buttonTheme: {
+        visibility: 'hidden'
+    },
+    labelStyle: {
+        visibility: 'hidden'
+        },
+        enabled:false
+    },
+    plotOptions: {
+    arearange: { lineWidth: 1 },
+    series: {
+      dataGrouping: { enabled: true }
+    }
+  },
+
+    series: [
+        {
+            pointInterval: 1000,
+            tooltip: {  headerFormat: '',yDecimals: 0, ySuffix: 'ms' },
+            yAxis: 0,
+            zIndex: 30,
+                name: '{{currBuild}} 90% line',
+                data: [
+                {% for result in currMaxData %}
+                [{{ result.0|add:"-currMaxData.0.0" }}, {{ result.1 }}],
+                {% endfor %}
+                ],
+            threshold: 15,
+        negativeColor: 'green',
+        color: 'red'
+        },
+        {
+            pointInterval: 1000,
+            tooltip: {  headerFormat: '',yDecimals: 0, ySuffix: 'ms' },
+            yAxis: 0,
+            zIndex: 20,
+            name: '{{baseBuild}} 90% line',
+            data: [
+                {% for result in baseMaxData %}
+                [ {{ result.0|add:"-baseMaxData.0.0" }},{{ result.1 }}],
+                {% endfor %}
+                ],
+                threshold: 15,
+        negativeColor: 'green',
+        color: '#0066FF'
+        }
+    ]
+});
+</script>

@@ -1,0 +1,47 @@
+<br/>
+<div class="text-center" id="buildCompMod"  style="background-color:#46C7C7;margin-bottom:10px;margin-top:25px;border-radius:10px;">
+    <button type="button" class="btn btn-outline-info btn-xs" style="background-color: Transparent;border: none;outline:none;" >
+        <h3 class="text-center" style="color:white;">Build Details</h3>
+    </button>
+</div>
+<table id="build" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+   <thead>
+        <tr>
+            <th>Server Type</th>
+            <th>Build Number : {{baseBuild}}</th>
+            <th>Build Number : {{currBuild}}</th>
+        </tr>
+   </thead>
+   <tbody>
+       <tr>
+           <td>Instructor</td>
+           <td>{{ buildDataBase.Instructor }}</td>
+           <td>{{ buildDataCurr.Instructor }}</td>
+       </tr>
+       <tr>
+           <td>Student</td>
+           <td>{{ buildDataBase.Student }}</td>
+           <td>{{ buildDataCurr.Student }}</td>
+       </tr>
+       <tr>
+           <td>OLRws</td>
+           <td>{{ buildDataBase.OLRws }}</td>
+           <td>{{ buildDataCurr.OLRws }}</td>
+       </tr>
+       <tr>
+           <td>SSOws</td>
+           <td>{{ buildDataBase.SSOws }}</td>
+           <td>{{ buildDataCurr.SSOws }}</td>
+       </tr>
+       <tr>
+           <td>RS</td>
+           <td>{{ buildDataBase.RS }}</td>
+           <td>{{ buildDataCurr.RS }}</td>
+       </tr>
+       <tr>
+           <td>UI</td>
+           <td>{{ buildDataBase.UI }}</td>
+           <td>{{ buildDataCurr.UI }}</td>
+       </tr>
+   </tbody>
+</table>

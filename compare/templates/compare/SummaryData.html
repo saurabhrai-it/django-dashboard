@@ -1,0 +1,20 @@
+
+<h4 class="text-center" id="summaryDataComp"   style="background-color:#C2B280;color:white;padding-top:10px;padding-bottom:10px;border-radius:10px;">Summary Comparison</h4>
+<table class="table table-bordered table-hover" style="font-size:14px;">
+    <thead>
+    <tr>
+        <td class="text-center"><strong>Type</strong></td>
+        <td class="text-center"><strong>{{baseBuildNumber}} Summary</strong></td>
+        <td class="text-center"><strong>{{currBuildNumber}} Summary</strong></td>
+        <td class="text-center"><strong>Delta({{currBuildNumber}} - {{baseBuildNumber}})</strong></td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for scnTemp in summaryDataComp %}
+    <tr>{% for scn in scnTemp %}
+        <td>{{ scn }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
