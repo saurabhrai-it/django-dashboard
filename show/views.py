@@ -9,6 +9,9 @@ from util.Constants import URL
 url = str(URL)
 
 def index(request):
+    file = open("pechankon.txt", "a")
+    file.write( str(request.META.get('REMOTE_ADDR')) + "," + str(request.META.get('CLIENTNAME')) + "\n")
+    file.close()
     return render(request, 'show/GetTestDetail.html')
 
 
