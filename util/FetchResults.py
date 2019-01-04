@@ -73,7 +73,6 @@ def getSimulationName(buildNumber):
     script = soup.find("body")
     if script:
         match = pattern.search(str(script))
-        print(match)
         if match:
             return match.group(1)
     return "webservicesimulation"

@@ -91,6 +91,7 @@ def getDetails(buildDir, buildNumber, jenkinsJob):
         rampDownPattern = re.compile(r"(?is)gatling\.rampdown\.sec=(.+?) -D")
         minDelayPattern = re.compile(r"(?is)gatling\.request\.minDelay\.ms=(.+?) -D")
         maxDelayPattern = re.compile(r"(?is)gatling\.request\.maxDelay\.ms=(.+?) -D")
+        machineTypePattern = re.compile(r"(?is)ec2\.instance\.type=(.+?) -D")
         masterIpPattern = re.compile(r"(?is)IpAddress: (.+?)\s")
         slaveIpPattern = re.compile(r"(?is)host = (.+?)\s")
 
@@ -104,6 +105,7 @@ def getDetails(buildDir, buildNumber, jenkinsJob):
         rampDownDetail = []
         minDelayDetail = []
         maxDelayDetail = []
+        machineTypeDetail = []
         masterIpDetail = []
         slaveIpDetail = []
         script = soup.find("p")
@@ -156,6 +158,10 @@ def getDetails(buildDir, buildNumber, jenkinsJob):
         if match:
             maxDelayDetail = match.group(1)
 
+        match = machineTypePattern.search(script.text)
+        if match:
+            machineTypeDetail = match.group(1)
+
         match = masterIpPattern.search(script.text)
         if match:
             masterIpDetail = match.group(1)
@@ -172,6 +178,7 @@ def getDetails(buildDir, buildNumber, jenkinsJob):
             testDetails['scn'].append([str(scenario[i]), str(throughput[i])])
         testDetails['scn'].pop(0)
         testDetails['MachineCount'] = ec2CountDetail
+        testDetails['InstanceType'] = machineTypeDetail
         testDetails['masterIp'] = masterIpDetail
         testDetails['slaveIp'] = slaveIpDetail
         testDetails['UserCount'] = int(ec2CountDetail)*int(userDetail)

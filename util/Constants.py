@@ -3,7 +3,7 @@ import configparser
 config = configparser.ConfigParser()
 config.read('util\\config.ini')
 
-URL = config.get('server', 'url')
+URL = config.get('server', 'localurl')
 JENKINS_URL = config.get('server', 'jenkins')
 JENKINS_Job = config.get('server', 'jenkinsjob')
 
@@ -16,7 +16,8 @@ spaceBtwTable = """
 
 def purposeOfTest(testPurpose):
 
-    purposeMail = """
+    try:
+        purposeMail = """
     <ul style="margin-top:0in" type="disc">
 	    <li style="text-autospace:none">
             <b>
@@ -26,6 +27,9 @@ def purposeOfTest(testPurpose):
 	    </li>
     </ul>    
     """
+    except Exception as ex:
+        purposeMail = str(ex)
+
     return purposeMail
 
 
@@ -361,7 +365,8 @@ def flowsTemplate(data):
 
 
 def startPoint():
-    pointer = """
+    try:
+        pointer = """
     <span style="font-family:Symbol;color:black">
         <span><b>·</b>
             <span style="font:7.0pt &quot;Times New Roman&quot;">
@@ -371,33 +376,150 @@ def startPoint():
     </span>
     <u></u>
     """
+    except Exception as ex:
+        pointer = str(ex)
+
     return pointer
 
 
 def instructorLogin(data):
-    instloginline = startPoint() + """
+    try:
+        instloginline = startPoint() + """
     <span lang="EN-US" style="color:black">
-        Mean response time for returning instructor lands on dashboard is <b>1.951 sec.</b>
+        Mean response time for returning instructor lands on dashboard is <b>""" + str(data) + """.</b>
     </span>
     <u></u><u></u>
     """
+    except Exception as ex:
+        instloginline = str(ex)
+
     return instloginline
 
 
 def studentLogin(data):
-    studloginline = startPoint() + """
+    try:
+        studloginline = startPoint() + """
     <span lang="EN-US" style="color:black">
-        Mean response time for returning student lands on dashboard(“Student Login”) is <b>1.951 sec.</b>
+        Mean response time for returning student lands on dashboard(“Student Login”) is <b>""" + str(data) + """.</b>
     </span>
     <u></u><u></u>
     """
+    except Exception as ex:
+        studloginline = str(ex)
+
     return studloginline
 
 
-def transactionSLA(data):
-    if not data:
-        return ""
-    transactionline = startPoint() + """
-    
+def new_student_created(data):
+    try:
+        stud_created = startPoint() + """
+    <span lang="EN-US" style="color:black">
+        <b>""" + str(data) + """</b> new student accounts were created using Course key URL.
+    </span>
+    <u></u><u></u>
     """
-    return transactionline
+    except Exception as ex:
+        stud_created = str(ex)
+
+    return stud_created
+
+
+def new_student_created_response_time(data):
+    try:
+        new_student_created = startPoint() + """
+    <span lang="EN-US" style="color:black">
+       Mean response time for new student following registration with course key lands on dashboard(“CU_10_02_EnterCompleteDetails”) is <b>""" + str(data) + """.</b>
+    </span>
+    <u></u><u></u>
+    """
+    except Exception as ex:
+        new_student_created = str(ex)
+
+    return new_student_created
+
+
+def meanTime(data):
+    try:
+        meanMail = startPoint() + """
+    <span lang="EN-US" style="color:black">
+       Overall mean response time – <b>""" + str(data) + """ sec.</b>
+    </span>
+    <u></u><u></u>
+    """
+
+    except Exception as ex:
+        meanMail = str(ex)
+
+    return meanMail
+
+
+def errorPercent(data):
+    try:
+        errorCentMail = startPoint() + """
+    <span lang="EN-US" style="color:black">
+       Overall Error % – <b>""" + str(data) + """%.</b>
+    </span>
+    <u></u><u></u>
+    """
+
+    except Exception as ex:
+        errorCentMail = str(ex)
+
+    return errorCentMail
+
+
+def pdfReport(data):
+    try:
+        pdfReportMail = startPoint() + """
+    <span lang="EN-US" style="color:black">
+       Detailed report attached  <b>CARES-SSO_""" + str(data) + """</b> contains summary for all the transactions and graphs.
+    </span>
+    <u></u><u></u>
+    """
+    except Exception as ex:
+        pdfReportMail = str(ex)
+    return pdfReportMail
+
+
+def jenkinsBuildNumber(data):
+    try:
+        buildNumberMail = startPoint() + """
+    <span lang="EN-US" style="color:black">
+       <span lang=EN-US style='color:black'>Jenkins Build Number : </span><span class=MsoHyperlink><span style='color:windowtext;text-decoration:none'><a href="http://10.160.20.242:8000/""" + str(data) + """">""" + str(data) + """</a>.</span></span>
+    </span>
+    <u></u><u></u>
+    """
+    except Exception as ex:
+        buildNumberMail = str(ex)
+    return buildNumberMail
+
+
+def student_login_courseurl_response_time(data):
+    try:
+        stud_login_courseurl = startPoint() + """<span lang="EN-US" style="color:black">Mean response time for new student following registration with course key lands on dashboard(“CU_10_02_EnterCompleteDetails”) is <b>""" + str(data) + """.</b></span><u></u><u></u>"""
+
+    except Exception as ex:
+        stud_login_courseurl = str(ex)
+
+    return stud_login_courseurl
+
+
+def startMail(data):
+    try:
+        starter = \
+        """<span lang="EN-US" style="color:black">Hi All,<br><br>
+            Below is the summary of """ + str(data) + """</span><u></u><u></u>"""
+
+    except Exception as ex:
+        starter = str(ex)
+
+    return starter
+
+
+# def transactionSLA(data):
+#     if not data:
+#         return ""
+#     transactionline = startPoint() + """
+#
+#     """
+#     return transactionline
