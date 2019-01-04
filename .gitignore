@@ -3,3 +3,5 @@ util/MailSender.py
 util/config.ini
 *.iml
 *.idea
+pechankon.txt
+error_details.log
