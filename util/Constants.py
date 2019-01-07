@@ -17,20 +17,28 @@ spaceBtwTable = """
 def purposeOfTest(testPurpose):
 
     try:
-        purposeMail = """
-    <ul style="margin-top:0in" type="disc">
-	    <li style="text-autospace:none">
-            <b>
-                <span style="color:black">Purpose of load test:</span>
-            </b>
-		    """ + testPurpose + """
-	    </li>
-    </ul>    
+        purposeMail = startPoint() + """
+    <span lang="EN-US" style="color:black">
+       <b>Purpose of load test:</b> """ + str(testPurpose) + """
+    </span>
     """
     except Exception as ex:
         purposeMail = str(ex)
 
     return purposeMail
+
+def resultOfTest():
+
+    try:
+        resultMail = startPoint() + """
+    <span lang="EN-US" style="color:black">
+       <b>Result : </b>???.
+    </span>
+    """
+    except Exception as ex:
+        resultMail = str(ex)
+
+    return resultMail
 
 
 def sectohourandminute(timestring):
@@ -374,7 +382,6 @@ def startPoint():
             </span>
         </span>
     </span>
-    <u></u>
     """
     except Exception as ex:
         pointer = str(ex)
@@ -388,7 +395,6 @@ def instructorLogin(data):
     <span lang="EN-US" style="color:black">
         Mean response time for returning instructor lands on dashboard is <b>""" + str(data) + """.</b>
     </span>
-    <u></u><u></u>
     """
     except Exception as ex:
         instloginline = str(ex)
@@ -402,7 +408,6 @@ def studentLogin(data):
     <span lang="EN-US" style="color:black">
         Mean response time for returning student lands on dashboard(“Student Login”) is <b>""" + str(data) + """.</b>
     </span>
-    <u></u><u></u>
     """
     except Exception as ex:
         studloginline = str(ex)
@@ -416,11 +421,10 @@ def new_student_created(data):
     <span lang="EN-US" style="color:black">
         <b>""" + str(data) + """</b> new student accounts were created using Course key URL.
     </span>
-    <u></u><u></u>
+    <u></u>
     """
     except Exception as ex:
         stud_created = str(ex)
-
     return stud_created
 
 
@@ -430,7 +434,7 @@ def new_student_created_response_time(data):
     <span lang="EN-US" style="color:black">
        Mean response time for new student following registration with course key lands on dashboard(“CU_10_02_EnterCompleteDetails”) is <b>""" + str(data) + """.</b>
     </span>
-    <u></u><u></u>
+    <u></u>
     """
     except Exception as ex:
         new_student_created = str(ex)
@@ -444,7 +448,7 @@ def meanTime(data):
     <span lang="EN-US" style="color:black">
        Overall mean response time – <b>""" + str(data) + """ sec.</b>
     </span>
-    <u></u><u></u>
+    <u></u>
     """
 
     except Exception as ex:
@@ -459,7 +463,7 @@ def errorPercent(data):
     <span lang="EN-US" style="color:black">
        Overall Error % – <b>""" + str(data) + """%.</b>
     </span>
-    <u></u><u></u>
+    <u></u>
     """
 
     except Exception as ex:
@@ -474,7 +478,7 @@ def pdfReport(data):
     <span lang="EN-US" style="color:black">
        Detailed report attached  <b>CARES-SSO_""" + str(data) + """</b> contains summary for all the transactions and graphs.
     </span>
-    <u></u><u></u>
+    <u></u>
     """
     except Exception as ex:
         pdfReportMail = str(ex)
@@ -487,7 +491,7 @@ def jenkinsBuildNumber(data):
     <span lang="EN-US" style="color:black">
        <span lang=EN-US style='color:black'>Jenkins Build Number : </span><span class=MsoHyperlink><span style='color:windowtext;text-decoration:none'><a href="http://10.160.20.242:8000/""" + str(data) + """">""" + str(data) + """</a>.</span></span>
     </span>
-    <u></u><u></u>
+    <u></u>
     """
     except Exception as ex:
         buildNumberMail = str(ex)
@@ -496,7 +500,7 @@ def jenkinsBuildNumber(data):
 
 def student_login_courseurl_response_time(data):
     try:
-        stud_login_courseurl = startPoint() + """<span lang="EN-US" style="color:black">Mean response time for new student following registration with course key lands on dashboard(“CU_10_02_EnterCompleteDetails”) is <b>""" + str(data) + """.</b></span><u></u><u></u>"""
+        stud_login_courseurl = startPoint() + """<span lang="EN-US" style="color:black">Mean response time for returning student login application using course URL(“CU_01_02_LoginCourseURL”) is  <b>""" + str(data) + """.</b></span><u></u>"""
 
     except Exception as ex:
         stud_login_courseurl = str(ex)
@@ -508,7 +512,7 @@ def startMail(data):
     try:
         starter = \
         """<span lang="EN-US" style="color:black">Hi All,<br><br>
-            Below is the summary of """ + str(data) + """</span><u></u><u></u>"""
+            Below is the summary of """ + str(data) + """:</span><br>"""
 
     except Exception as ex:
         starter = str(ex)

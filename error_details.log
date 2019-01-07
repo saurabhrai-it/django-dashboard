@@ -19,3 +19,276 @@
 "GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
 "GET /4939 HTTP/1.1" 200 178312
 "GET /4939 HTTP/1.1" 200 178312
+"GET / HTTP/1.1" 200 337
+"GET /5358 HTTP/1.1" 200 181462
+"GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 200 4215
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/js/jquery.dataTables.min.js HTTP/1.1" 200 82812
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/css/highcharts.css HTTP/1.1" 200 13893
+"GET /static/img/monkeywalk.gif HTTP/1.1" 200 67946
+"GET /static/js/highstock.js HTTP/1.1" 200 263358
+"GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+"GET /compare/5358/5344 HTTP/1.1" 200 39
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET /5354 HTTP/1.1" 200 164
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2541
+"GET /fetcher/save/5354/Verification%20Test HTTP/1.1" 200 115
+"GET /5354 HTTP/1.1" 200 180015
+"GET /5358 HTTP/1.1" 200 164
+"GET /fetcher/save/5358/Verification%20Test HTTP/1.1" 200 115
+"GET /5358 HTTP/1.1" 200 177740
+"GET /5358 HTTP/1.1" 200 164
+"GET /fetcher/save/5358/Verification%20Test HTTP/1.1" 200 115
+"GET /fetcher/save/5358/Verification%20Test HTTP/1.1" 200 49
+"GET /fetcher/save/5358/Verification%20Test HTTP/1.1" 200 115
+"GET /5358 HTTP/1.1" 200 177740
+"GET /5358 HTTP/1.1" 200 164
+"GET /fetcher/save/5358/Verification%20Test HTTP/1.1" 200 115
+"GET /5358 HTTP/1.1" 200 177740
+"GET /5358 HTTP/1.1" 200 164
+"GET /fetcher/save/5358/Verification%20Test HTTP/1.1" 200 115
+"GET /5358 HTTP/1.1" 200 177740
+"GET /5358 HTTP/1.1" 200 164
+"GET /fetcher/save/5358/Verification%20Test HTTP/1.1" 200 115
+"GET /5358 HTTP/1.1" 200 177740
+"GET /5358 HTTP/1.1" 200 164
+"GET /fetcher/save/5358/Verification%20Test HTTP/1.1" 200 115
+"GET /5358 HTTP/1.1" 200 177740
+"GET /5376 HTTP/1.1" 200 164
+"GET /fetcher/save/5376/Verification%20Test HTTP/1.1" 200 115
+"GET /5376 HTTP/1.1" 200 177318
+"GET / HTTP/1.1" 200 337
+"GET /5372 HTTP/1.1" 200 164
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2541
+"GET /fetcher/save/5372/Verification%20Test HTTP/1.1" 200 115
+"GET /5372 HTTP/1.1" 200 177677
+"GET /5372 HTTP/1.1" 200 164
+"GET /fetcher/save/5372/Verification%20Test HTTP/1.1" 200 115
+"GET /5372 HTTP/1.1" 200 177677
