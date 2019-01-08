@@ -3,7 +3,7 @@ import re
 
 import bs4 as bs
 import urllib.request
-from util import Result, Dataparser
+from util import Result, Dataparser, Screenshoter
 from util.Constants import JENKINS_URL
 from util.Constants import JENKINS_Job
 
@@ -13,11 +13,8 @@ jenkinsJob = str(JENKINS_Job)
 
 def fetch(buildDir, buildNumber, loadtestPurpose):
     simulation_name = str(getSimulationName(buildNumber))
-    sourceCode = urllib.request.urlopen( jenkinsUrl +
-                                        '/job/' + jenkinsJob + '/'
-                                        + str(buildNumber) + '/gatling/'
-                                        'report/' + simulation_name +
-                                        '/source/index.html').read()
+    completePath = jenkinsUrl + '/job/' + jenkinsJob + '/' + str(buildNumber) + '/gatling/report/' + simulation_name + '/source/index.html'
+    sourceCode = urllib.request.urlopen(completePath).read()
     soup = bs.BeautifulSoup(sourceCode,'html.parser')
 
     _90centData, maxData = Result.fetch90centMax(soup)
@@ -27,6 +24,7 @@ def fetch(buildDir, buildNumber, loadtestPurpose):
     aggReport = Result.fetchAggData(buildDir, buildNumber, jenkinsJob, simulation_name)
     parsedErrorData = Dataparser.parseError(errorData)
     loadtestDetail = Result.getDetails(buildDir, buildNumber, jenkinsJob)
+    takeScreenshotAndGeneratePDF = Screenshoter.getScreenshot(buildDir, completePath)
 
     file = open(buildDir + "\\loadtestPurpose.txt", "w+")
     file.write(str(loadtestPurpose))

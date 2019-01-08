@@ -292,3 +292,514 @@ Not Found: /favicon.ico
 "GET /5372 HTTP/1.1" 200 164
 "GET /fetcher/save/5372/Verification%20Test HTTP/1.1" 200 115
 "GET /5372 HTTP/1.1" 200 177677
+"GET /5376 HTTP/1.1" 200 164
+"GET /fetcher/save/5376/Verification%20Test HTTP/1.1" 200 115
+"GET /5376 HTTP/1.1" 200 177386
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\common\service.py", line 76, in start
+    stdin=PIPE)
+  File "C:\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 5, in getScreenshot
+    driver = webdriver.PhantomJS()
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\phantomjs\webdriver.py", line 56, in __init__
+    self.service.start()
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\common\service.py", line 83, in start
+    os.path.basename(self.path), self.start_error_message)
+selenium.common.exceptions.WebDriverException: Message: 'phantomjs' executable needs to be in PATH. 
+
+"GET /5376 HTTP/1.1" 500 137078
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\common\service.py", line 76, in start
+    stdin=PIPE)
+  File "C:\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 5, in getScreenshot
+    driver = webdriver.PhantomJS(executable_path='phantomjs.exe')
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\phantomjs\webdriver.py", line 56, in __init__
+    self.service.start()
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\common\service.py", line 83, in start
+    os.path.basename(self.path), self.start_error_message)
+selenium.common.exceptions.WebDriverException: Message: 'phantomjs.exe' executable needs to be in PATH. 
+
+"GET /5376 HTTP/1.1" 500 137192
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\common\service.py", line 76, in start
+    stdin=PIPE)
+  File "C:\Python36-32\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Python36-32\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+PermissionError: [WinError 5] Access is denied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 5, in getScreenshot
+    driver = webdriver.PhantomJS(executable_path=r'C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util')
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\phantomjs\webdriver.py", line 56, in __init__
+    self.service.start()
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\common\service.py", line 88, in start
+    os.path.basename(self.path), self.start_error_message)
+selenium.common.exceptions.WebDriverException: Message: 'util' executable may have wrong permissions. 
+
+"GET /5376 HTTP/1.1" 500 137481
+"GET /5376 HTTP/1.1" 200 177386
+"GET /5376 HTTP/1.1" 200 177386
+"GET /5376 HTTP/1.1" 200 177386
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 18, in getScreenshot
+    driver.find_element_by_xpath("//*[@data-highcharts-chart='6']").screenshot_as_png(buildDir + "\\failedresponsepersec.png")
+TypeError: 'bytes' object is not callable
+"GET /5376 HTTP/1.1" 500 103104
+"GET /5376 HTTP/1.1" 200 177386
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 18, in getScreenshot
+    driver.find_element_by_xpath("//*[@data-highcharts-chart='6']").save_screenshot(buildDir + "\\failedresponsepersec.png")
+AttributeError: 'WebElement' object has no attribute 'save_screenshot'
+"GET /5376 HTTP/1.1" 500 103257
+"GET /5376 HTTP/1.1" 200 177386
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 19, in getScreenshot
+    driver.save_screenshot(buildDir + "\\failedresponsepersec.png")
+AttributeError: 'WebElement' object has no attribute 'save_screenshot'
+"GET /5376 HTTP/1.1" 500 103116
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 15, in getScreenshot
+    driver = driver.find_element_by_xpath("//*[@data-highcharts-chart='6']//*[@class='highcharts-legend-item']/*[text()='OK']").click()
+AttributeError: 'NoneType' object has no attribute 'find_element_by_xpath'
+"GET /5376 HTTP/1.1" 500 103404
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 19, in getScreenshot
+    driver.save_screenshot(buildDir + "\\failedresponsepersec.png")
+AttributeError: 'WebElement' object has no attribute 'save_screenshot'
+"GET /5376 HTTP/1.1" 500 103116
+"GET /5376 HTTP/1.1" 200 177386
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 31, in getScreenshot
+    driver.set_window_size(1024, 768)
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1068, in set_window_size
+    self.set_window_rect(width=int(width), height=int(height))
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1160, in set_window_rect
+    "height": height})['value']
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 314, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: POST /session/0e7537fd-47a5-419a-96d1-f3cacd98fe81/window/rect did not match a known command
+
+"GET /5376 HTTP/1.1" 500 121941
+"GET /5376 HTTP/1.1" 200 177386
+"GET /5376 HTTP/1.1" 200 177386
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 64, in getScreenshot
+    driver.find_element_by_xpath("//*[@data-highcharts-chart='6']//*[@class='highcharts-legend-item']/*[text()='OK']").click()
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 628, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 314, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: Element is not clickable at point (688, 3036)
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.16299 x86_64)
+
+"GET /5376 HTTP/1.1" 500 122895
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 55, in getScreenshot
+    driver.maximize_window()
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 728, in maximize_window
+    self.execute(command, {"windowHandle": "current"})
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 314, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: cannot get automation extension
+from unknown error: page could not be found: chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.16299 x86_64)
+
+"GET /5376 HTTP/1.1" 500 119666
+Internal Server Error: /5376
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\show\views.py", line 106, in showdata
+    Screenshoter.getScreenshot(build_dir, "https://soajenkins-loadtest.cengage.info/job/SSO-OLRWebService-GatlingPipeline/5376/gatling/report/gatling-webservicesimulation/source/index.html")
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\Screenshoter.py", line 55, in getScreenshot
+    driver.maximize_window()
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 728, in maximize_window
+    self.execute(command, {"windowHandle": "current"})
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 314, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python36-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: cannot get automation extension
+from unknown error: page could not be found: chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.16299 x86_64)
+
+"GET /5376 HTTP/1.1" 500 119666
+"GET /5376 HTTP/1.1" 200 177386
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET /5376 HTTP/1.1" 200 177386
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 337
+"GET /5376 HTTP/1.1" 200 177386
+"GET /5368 HTTP/1.1" 200 164
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2541
+"GET /fetcher/save/5368/Verification%20Test HTTP/1.1" 200 115
+"GET /5368 HTTP/1.1" 200 177815
+"GET /5368 HTTP/1.1" 200 177815
+"GET /5368 HTTP/1.1" 200 164
+"GET /fetcher/save/5368/Verification%20Test HTTP/1.1" 200 115
+"GET /5368 HTTP/1.1" 200 177815
+"GET /5376 HTTP/1.1" 200 164
+"GET /fetcher/save/5376/Verification%20Test HTTP/1.1" 200 115
+"GET /5376 HTTP/1.1" 200 164
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2541
+"GET /fetcher/save/5376/Verification%20Test HTTP/1.1" 200 115
+"GET /5376 HTTP/1.1" 200 177454
