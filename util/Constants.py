@@ -476,7 +476,7 @@ def pdfReport(data):
     try:
         pdfReportMail = startPoint() + """
     <span lang="EN-US" style="color:black">
-       Detailed report attached  <b>CARES-SSO_""" + str(data) + """</b> contains summary for all the transactions and graphs.
+       Detailed report attached  <b>""" + str(data) + """</b> contains summary for all the transactions and graphs.
     </span>
     <u></u>
     """
@@ -520,10 +520,12 @@ def startMail(data):
     return starter
 
 
-# def transactionSLA(data):
-#     if not data:
-#         return ""
-#     transactionline = startPoint() + """
-#
-#     """
-#     return transactionline
+def footer():
+    try:
+        foot = \
+        """<span lang=EN-US style='color:black'>Please let us know if more information is needed.</span><br><br><p class=wordsection1 style='margin:0cm;margin-bottom:.0001pt;text-autospace:none'><span lang=EN-US style='color:#00008E'>Best Regards,</span><span lang=EN-US style='font-size:11.0pt'><o:p></o:p></span></p><p class=wordsection1 style='margin:0cm;margin-bottom:.0001pt;text-autospace:none'><b><span lang=EN-US style='color:#00008E'>Saurabh Rai</span></b><span lang=EN-US style='font-size:11.0pt;color:black'><o:p></o:p></span></p><p class=wordsection1 style='margin:0cm;margin-bottom:.0001pt;text-autospace:none'><span lang=EN-US style='font-size:9.0pt;color:#00008E'>Software Testing Engineer II - Performance</span><span lang=EN-US style='font-size:9.0pt;color:black'><o:p></o:p></span></p><p class=wordsection1 style='margin:0cm;margin-bottom:.0001pt;text-autospace:none'><span lang=EN-US style='font-size:9.0pt;color:#00006D'>QA Infotech</span><span lang=EN-US style='font-size:9.0pt;color:black'><o:p></o:p></span></p><p class=wordsection1 style='margin:0cm;margin-bottom:.0001pt;text-autospace:none'><span lang=EN-US style='font-size:9.0pt;color:#00006D'>A-8, Sector 68, Noida-201301</span><span lang=EN-US style='font-size:9.0pt'><o:p></o:p></span></p><p class=wordsection1 style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-size:9.0pt;color:#00008E'>(c) +91-971-631-5636 | (e)&nbsp;</span><a href="mailto:saurabhrai@qainfotech.com"><span lang=EN-US style='font-size:9.0pt'>saurabhrai@qainfotech.com</span></a><span lang=EN-US style='font-size:9.0pt;color:#00008E'>&nbsp;|&nbsp;Skype IM: saurabhrai.it</span><span lang=EN-US style='font-size:9.0pt'><o:p></o:p></span></p><p class=xwordsection1 style='text-autospace:none'><span style='color:black'>&nbsp;</span><span lang=EN-US style='color:black'><o:p></o:p></span></p>"""
+
+    except Exception as ex:
+        foot = str(ex)
+
+    return foot

@@ -803,3 +803,59 @@ Not Found: /favicon.ico
 "GET /favicon.ico HTTP/1.1" 404 2541
 "GET /fetcher/save/5376/Verification%20Test HTTP/1.1" 200 115
 "GET /5376 HTTP/1.1" 200 177454
+"GET /5376 HTTP/1.1" 200 164
+Internal Server Error: /fetcher/save/5376/Verification Test
+Traceback (most recent call last):
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\fetcher\views.py", line 27, in savedata
+    MailSender.send(build_dir, buildNumber)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\MailSender.py", line 164, in send
+    fo = open(pdf_report_name,'rb')
+FileNotFoundError: [Errno 2] No such file or directory: 'CARES-SSO_LoadEnv_Gatling_Report_05 January 2019_3501 Vusers.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\fetcher\views.py", line 32, in savedata
+    return HttpResponse("Internal Error occured! " + Exception.args)
+TypeError: must be str, not getset_descriptor
+"GET /fetcher/save/5376/Verification%20Test HTTP/1.1" 500 100675
+Internal Server Error: /fetcher/save/5376/Verification Test
+Traceback (most recent call last):
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\fetcher\views.py", line 27, in savedata
+    MailSender.send(build_dir, buildNumber)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\util\MailSender.py", line 165, in send
+    attach = email.mime.application.MIMEApplication(fo.read(),_subtype="pdf")
+AttributeError: module 'email.mime' has no attribute 'application'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\saurabhrai\Desktop\sso\learn\learnDjango\fetcher\views.py", line 31, in savedata
+    shutil.rmtree(build_dir)
+  File "C:\Python36-32\lib\shutil.py", line 494, in rmtree
+    return _rmtree_unsafe(path, onerror)
+  File "C:\Python36-32\lib\shutil.py", line 389, in _rmtree_unsafe
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "C:\Python36-32\lib\shutil.py", line 387, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\Results\\5376\\CARES-SSO_LoadEnv_Gatling_Report_05 January 2019_3501 Vusers.pdf'
+"GET /fetcher/save/5376/Verification%20Test HTTP/1.1" 500 115288
+"GET /fetcher/save/5376/Verification%20Test HTTP/1.1" 200 115
+"GET /5376 HTTP/1.1" 200 177454
+"GET /5376 HTTP/1.1" 200 164
+"GET /fetcher/save/5376/Verification%20Test HTTP/1.1" 200 115
+"GET /5376 HTTP/1.1" 200 177454
+"GET /5380 HTTP/1.1" 200 164
+"GET /fetcher/save/5380/Verification%20Test HTTP/1.1" 200 115
