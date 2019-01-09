@@ -859,3 +859,5 @@ PermissionError: [WinError 32] The process cannot access the file because it is 
 "GET /5376 HTTP/1.1" 200 177454
 "GET /5380 HTTP/1.1" 200 164
 "GET /fetcher/save/5380/Verification%20Test HTTP/1.1" 200 115
+"GET / HTTP/1.1" 403 0
+"GET / HTTP/1.1" 200 337
