@@ -980,3 +980,363 @@ Not Found: /favicon.ico
 "GET /fetcher/save/5384/Verification%20Test HTTP/1.1" 200 115
 "GET /5384 HTTP/1.1" 200 177607
 "GET /fetcher/save/5384/Verification%20Test HTTP/1.1" 200 115
+"GET / HTTP/1.1" 200 1016
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Python36-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36-32\lib\site-packages\django\urls\resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'fetcher.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\fetcher\\urls.py'> (None:None) 'fetcher/'>], [<URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'show.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\show\\urls.py'> (None:None) ''>, <URLPattern '<int:buildNumber>' [name='showdata']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36-32\lib\site-packages\django\template\base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'compare.urls' from 'C:\\Users\\saurabhrai\\Desktop\\sso\\learn\\learnDjango\\compare\\urls.py'> (None:None) 'compare/'>
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2541
+"GET / HTTP/1.1" 200 746
+"GET / HTTP/1.1" 200 705
+"GET / HTTP/1.1" 200 705
+"GET / HTTP/1.1" 200 705
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET / HTTP/1.1" 200 1184
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1176
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1178
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1178
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1164
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1192
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1216
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1243
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1222
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1246
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1262
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1262
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1313
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1327
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1327
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1382
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1379
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1378
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1394
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1394
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1393
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1393
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1366
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1378
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1390
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1402
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1378
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1399
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET / HTTP/1.1" 200 1399
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1826
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET /4555 HTTP/1.1" 200 164
+"GET / HTTP/1.1" 200 1826
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1886
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
+"GET /5669 HTTP/1.1" 200 202049
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/css/highcharts.css HTTP/1.1" 200 13893
+"GET /static/css/dataTables.bootstrap.min.css HTTP/1.1" 200 4215
+"GET /static/js/jquery.dataTables.min.js HTTP/1.1" 200 82812
+"GET /static/img/monkeywalk.gif HTTP/1.1" 200 67946
+"GET /static/js/highstock.js HTTP/1.1" 200 263358
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+"GET /compare/5669/5669 HTTP/1.1" 200 276084
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/jquery.dataTables.min.js HTTP/1.1" 200 82812
+"GET /static/js/dataTables.bootstrap.min.js HTTP/1.1" 200 1968
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET / HTTP/1.1" 200 1886
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET / HTTP/1.1" 200 1910
+"GET /static/css/bootstrap.min.css HTTP/1.1" 200 121200
+"GET /static/img/qaMaxLogo.jpg HTTP/1.1" 200 10440
+"GET /static/js/jquery.min.js HTTP/1.1" 200 86711
+"GET /static/js/bootstrap.min.js HTTP/1.1" 200 37045
+"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+"GET /static/img/qaMinLogo.ico HTTP/1.1" 200 6713
