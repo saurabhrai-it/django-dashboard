@@ -1,3 +1,45 @@
+import os
+import ast
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+base_dir = os.path.sep.join(dir_path.split(os.path.sep)[:-1])
+result_dir = os.path.join(base_dir, "Results")
+allResultBuildNumber = os.listdir(result_dir+"\\")
+
+histogramRequestFile = open(result_dir + "\\reqCountHisto.txt","w+")
+try:
+    histoReqData = ast.literal_eval(histogramRequestFile.read())
+except:
+    histoReqData = []
+for i in allResultBuildNumber:
+
+    try:
+        summaryFile = open(result_dir + "\\" + i + "\\summaryData.txt","r")
+        summaryFileData = ast.literal_eval(summaryFile.read())
+        summaryFile.close()
+
+        userFile = open(result_dir + "\\" + i + "\\_userData.txt","r")
+        userStartData = ast.literal_eval(userFile.read())
+        userFile.close()
+
+        histoReqData.append([userStartData[0][0], summaryFileData[0][1], summaryFileData[1][1], summaryFileData[2][1], int(i)])
+    except Exception as e:
+        print(e)
+
+histogramRequestFile.write(str(histoReqData))
+histogramRequestFile.close()
+
+
+
+
+
+
+
+
+
+
+
+
 #
 #
 # base = [['Total Request', 31334192], ['Total Passed Request', 31332646], ['Total Failed Request', 1546], ['Average Hits per seconds', '2770.486'], ['Overall Mean Response Time', 0.08], ['90% Mean Response Time', 0.096], ['Error %', 0.0]]
@@ -33,20 +75,20 @@ import splunklib.results as results
 # for item in reader:
 #     print(item)
 #     print(item)
-HOST = "hostinfo"
-PORT = 8089
-USERNAME = "username"
-PASSWORD = "password"
-SCHEME = "https"
-service = client.connect(
-    host=HOST,
-    port=PORT,
-    username=USERNAME,
-    password=PASSWORD)
-
-kwargs_oneshot = {"earliest_time": "2018-08-30T01:44:00.000",
-                  "latest_time": "2018-08-30T04:52:00.000"
-                  }
+# HOST = "hostinfo"
+# PORT = 8089
+# USERNAME = "username"
+# PASSWORD = "password"
+# SCHEME = "https"
+# service = client.connect(
+#     host=HOST,
+#     port=PORT,
+#     username=USERNAME,
+#     password=PASSWORD)
+#
+# kwargs_oneshot = {"earliest_time": "2018-08-30T01:44:00.000",
+#                   "latest_time": "2018-08-30T04:52:00.000"
+#                   }
 # searchquery_oneshot = """
 # search index="est_gatling_test" logger="io.gatling.http.ahc.ResponseProcessor" level="DEBUG"
 # | rex field=_raw "List\\(GroupBlock\\(List\\((?<SimulationName>.+?), (?<TransactionName>.+?)\\).+?HTTP request:\\\n(POST|GET) (?<RequestUrl>.+?)\\\n.+?HTTP response:\\\nstatus=\\\n(?<ResponseCode>.+?)\\\n"| table SimulationName TransactionName RequestUrl ResponseCode

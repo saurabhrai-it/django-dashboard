@@ -22,7 +22,7 @@ def savedata(request, buildNumber, loadtestPurpose):
     else:
         try:
             os.mkdir(build_dir)
-            FetchResults.fetch(build_dir, buildNumber, loadtestPurpose.replace("+", " "))
+            FetchResults.fetch(result_dir, build_dir, buildNumber, loadtestPurpose.replace("+", " "))
 
             MailSender.send(build_dir, buildNumber)
             return HttpResponse("Result is saved successfully!!! "

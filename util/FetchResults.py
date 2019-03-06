@@ -11,7 +11,7 @@ jenkinsUrl = str(JENKINS_URL)
 jenkinsJob = str(JENKINS_Job)
 
 
-def fetch(buildDir, buildNumber, loadtestPurpose):
+def fetch(result_dir, buildDir, buildNumber, loadtestPurpose):
     simulation_name = str(getSimulationName(buildNumber))
     completePath = jenkinsUrl + '/job/' + jenkinsJob + '/' + str(buildNumber) + '/gatling/report/' + simulation_name + '/source/index.html'
     sourceCode = urllib.request.urlopen(completePath).read()
@@ -25,6 +25,17 @@ def fetch(buildDir, buildNumber, loadtestPurpose):
     parsedErrorData = Dataparser.parseError(errorData)
     loadtestDetail = Result.getDetails(buildDir, buildNumber, jenkinsJob)
     takeScreenshotAndGeneratePDF = Screenshoter.getScreenshot(buildDir, completePath)
+
+
+    fileHistoReqCount = open(result_dir + "\\reqCountHisto.txt", "w+")
+    histoReqCount = ast.literal_eval(fileHistoReqCount.read())
+    histoSummaryFile = open(buildDir + "\\summaryData.txt","r")
+    histoSummaryFileData = ast.literal_eval(histoSummaryFile.read())
+    histoSummaryFile.close()
+    histoReqCount.append([userData[0][0], histoSummaryFileData[0][1], histoSummaryFileData[1][1], histoSummaryFileData[2][1], int(buildNumber)])
+    fileHistoReqCount.write(str(""))
+    fileHistoReqCount.write(str(histoReqCount))
+    fileHistoReqCount.close()
 
     file = open(buildDir + "\\loadtestPurpose.txt", "w+")
     file.write(str(loadtestPurpose))

@@ -13,7 +13,19 @@ def index(request):
     file = open("pechankon.txt", "a")
     file.write( str(request.META.get('REMOTE_ADDR')) + "," + str(request.META.get('CLIENTNAME')) + "\n")
     file.close()
-    return render(request, 'show/GetTestDetail.html')
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    base_dir = os.path.sep.join(dir_path.split(os.path.sep)[:-1])
+    result_dir = os.path.join(base_dir, "Results")
+    # allResultBuildNumber = os.listdir(result_dir+"\\")
+    # allResultBuildNumber.sort(reverse=True)
+    try:
+        histoReq = open(result_dir + "\\reqCountHisto.txt","r")
+        histoReqData = ast.literal_eval(histoReq.read())
+        histoReq.close()
+    except:
+        histoReqData = 0
+
+    return render(request, 'show/GetTestDetail.html',{'histoRequestCount': histoReqData})
 
 
 def showdata(request, buildNumber):
