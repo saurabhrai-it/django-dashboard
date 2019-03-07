@@ -24,7 +24,7 @@ def savedata(request, buildNumber, loadtestPurpose):
             os.mkdir(build_dir)
             FetchResults.fetch(result_dir, build_dir, buildNumber, loadtestPurpose.replace("+", " "))
 
-            MailSender.send(build_dir, buildNumber)
+            # MailSender.send(build_dir, buildNumber)
             return HttpResponse("Result is saved successfully!!! "
                                 "<a href='" + url + "/" + str(buildNumber) + "'>Click here</a> to view results for this build.")
         except Exception:

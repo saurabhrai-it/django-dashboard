@@ -26,17 +26,6 @@ def fetch(result_dir, buildDir, buildNumber, loadtestPurpose):
     loadtestDetail = Result.getDetails(buildDir, buildNumber, jenkinsJob)
     takeScreenshotAndGeneratePDF = Screenshoter.getScreenshot(buildDir, completePath)
 
-
-    fileHistoReqCount = open(result_dir + "\\reqCountHisto.txt", "w+")
-    histoReqCount = ast.literal_eval(fileHistoReqCount.read())
-    histoSummaryFile = open(buildDir + "\\summaryData.txt","r")
-    histoSummaryFileData = ast.literal_eval(histoSummaryFile.read())
-    histoSummaryFile.close()
-    histoReqCount.append([userData[0][0], histoSummaryFileData[0][1], histoSummaryFileData[1][1], histoSummaryFileData[2][1], int(buildNumber)])
-    fileHistoReqCount.write(str(""))
-    fileHistoReqCount.write(str(histoReqCount))
-    fileHistoReqCount.close()
-
     file = open(buildDir + "\\loadtestPurpose.txt", "w+")
     file.write(str(loadtestPurpose))
     file.close()
@@ -72,6 +61,27 @@ def fetch(result_dir, buildDir, buildNumber, loadtestPurpose):
     file = open(buildDir + "\\loadtestDetail.txt", "w+")
     file.write(str(loadtestDetail))
     file.close()
+
+    fileHistoReqCount = open(result_dir + "\\reqCountHisto.txt", "r")
+    histoReqCount = ast.literal_eval(fileHistoReqCount.read())
+    fileHistoReqCount.close()
+    open(result_dir + "\\reqCountHisto.txt", "w").close()
+
+    currReqCountDataString = ""
+    for i in histoReqCount:
+        currReqCountDataString = currReqCountDataString + str(i[4]) + " "
+
+    fileHistoReqCount = open(result_dir + "\\reqCountHisto.txt", "a+")
+
+    histoSummaryFile = open(buildDir + "\\summaryData.txt", "r")
+    histoSummaryFileData = ast.literal_eval(histoSummaryFile.read())
+    histoSummaryFile.close()
+    userData = ast.literal_eval(userData)
+
+    if not currReqCountDataString.__contains__(str(buildNumber)):
+        histoReqCount.append([userData[0][0], histoSummaryFileData[0][1], histoSummaryFileData[1][1], histoSummaryFileData[2][1], int(buildNumber)])
+    fileHistoReqCount.write(str(histoReqCount))
+    fileHistoReqCount.close()
 
 
 def getSimulationName(buildNumber):
