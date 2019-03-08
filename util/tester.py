@@ -4,9 +4,10 @@ import ast
 dir_path = os.path.dirname(os.path.realpath(__file__))
 base_dir = os.path.sep.join(dir_path.split(os.path.sep)[:-1])
 result_dir = os.path.join(base_dir, "Results")
-allResultBuildNumber = os.listdir(result_dir+"\\")
+allResultBuildNumber = [allbuild for allbuild in os.listdir(result_dir+"\\") if os.path.isdir(os.path.join(result_dir+"\\", allbuild))]
 
-histogramRequestFile = open(result_dir + "\\reqCountHisto.txt","w+")
+
+histogramRequestFile = open(result_dir + "\\responsetimeHisto.txt","w+")
 try:
     histoReqData = ast.literal_eval(histogramRequestFile.read())
 except:
@@ -22,7 +23,7 @@ for i in allResultBuildNumber:
         userStartData = ast.literal_eval(userFile.read())
         userFile.close()
 
-        histoReqData.append([userStartData[0][0], summaryFileData[0][1], summaryFileData[1][1], summaryFileData[2][1], int(i)])
+        histoReqData.append([userStartData[0][0], int(summaryFileData[4][1]*1000), int(summaryFileData[5][1]*1000), int(i)])
     except Exception as e:
         print(e)
 

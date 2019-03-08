@@ -25,14 +25,35 @@ def index(request):
     except:
         histoReqData = 0
 
-    return render(request, 'show/GetTestDetail.html',{'histoRequestCount': histoReqData})
+    try:
+        histoResTime = open(result_dir + "\\responsetimeHisto.txt","r")
+        histoResTimeData = ast.literal_eval(histoResTime.read())
+        histoResTime.close()
+    except:
+        histoResTimeData = 0
+
+
+    try:
+        histoHits = open(result_dir + "\\hitsHisto.txt","r")
+        histoHitsData = ast.literal_eval(histoHits.read())
+        histoHits.close()
+    except:
+        histoHitsData = 0
+
+
+
+    return render(request, 'show/GetTestDetail.html',{
+                                                        'histoRequestCount': histoReqData,
+                                                        'histoResponseTime': histoResTimeData,
+                                                        'histoHitsPerSec': histoHitsData
+                                                      })
 
 
 def showdata(request, buildNumber):
     dir_path = os.path.dirname(os.path.realpath(__file__))
     base_dir = os.path.sep.join(dir_path.split(os.path.sep)[:-1])
     result_dir = os.path.join(base_dir, "Results")
-    allResultBuildNumber = os.listdir(result_dir+"\\")
+    allResultBuildNumber = [allbuild for allbuild in os.listdir(result_dir+"\\") if os.path.isdir(os.path.join(result_dir+"\\", allbuild))]
     allResultBuildNumber.sort(reverse=True)
     build_dir = os.path.join(result_dir, str(buildNumber))
     if os.path.isdir(build_dir):

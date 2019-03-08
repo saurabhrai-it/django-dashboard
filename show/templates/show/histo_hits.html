@@ -1,20 +1,22 @@
 <br/>
-<div class="text-center" id="histoRequestCountMod"  style="background-color:#46C7C7;margin-bottom:10px;border-radius:10px;">
-    <button type="button" class="btn btn-outline-info btn-xs" style="background-color: Transparent;border: none;outline:none;" >
-        <h3 class="text-center" style="color:white;">Request Count Histogram</h3>
+<div class="text-center" id="histoHitsPerSecMod"  style="background-color:#46C7C7;margin-bottom:10px;border-radius:10px;">
+    <button type="button" class="btn btn-outline-info btn-xs" style="background-color: Transparent;border: none;outline:none;">
+        <h3 class="text-center" style="color:white;">Hits Per Sec Histogram</h3>
     </button>
 </div>
-<div id="histoRequestCount" style="height: 400px;"></div>
+<div id="histoHitsPerSec" style="height: 400px;"></div>
 
 <script>
 
-var histgramRequestCountData = {{histoRequestCount}}
-var propertyData = [];
-for (var i = 0; i < histgramRequestCountData.length; i++) {
-    propertyData[histgramRequestCountData[i][0]] = {"Passed Request":histgramRequestCountData[i][2],"Failed Request":histgramRequestCountData[i][3],"Build Number":histgramRequestCountData[i][4]};
+var histgramHitsData = {{histoHitsPerSec}}
+var propertyDataHits = [];
+for (var i = 0; i < histgramHitsData.length; i++) {
+    propertyDataHits[histgramHitsData[i][0]] = {
+                                             "Build Number": histgramHitsData[i][2]
+                                             };
 }
 
-Highcharts.stockChart('histoRequestCount', {
+Highcharts.stockChart('histoHitsPerSec', {
     chart: {
         zoomType: 'x'
     },
@@ -35,7 +37,7 @@ Highcharts.stockChart('histoRequestCount', {
     {
       min: 0,
       title: {
-        text: 'Request Count',
+        text: 'Hits Per Sec',
         style: { color: '#4572A7' }
       },
       opposite: false
@@ -99,34 +101,31 @@ Highcharts.stockChart('histoRequestCount', {
     selected : 3,
     inputEnabled : true
   },
-tooltip: {
+    tooltip: {
         valueDecimals: 0,
         xDateFormat: '%H:%M:%S %d-%m-%Y',
         formatter: function () {
                 var s = '<b>' + Highcharts.dateFormat('%A, %b %e, %Y', this.x) + '</b>';
 
                             $.each(this.points, function () {
-                    s += '<br/>Build Number : ' + propertyData[this.x]["Build Number"] + ' <br/>' +
-                        'Total Requests  : ' + this.y + ' <br/>' +
-                        'Passed Requests : ' +  propertyData[this.x]["Passed Request"] + "<br/>" +
-                        'Failed Requests : ' +  propertyData[this.x]["Failed Request"] ;
+                    s += '<br/>Build Number : ' + propertyDataHits[this.x]["Build Number"] + ' <br/>' +
+                         'Hits Per Sec  : ' + this.y ;
                 });
-
                 return s;
             }
     },
     series: [
         {
             pointInterval: 1000,
-            tooltip: { yDecimals: 0 },
+            tooltip: { yDecimals: 0, ySuffix: 'ms' },
             type : 'line',
             yAxis: 0,
             zIndex: 10,
             marker: {
                 radius: 4
             },
-            name: 'Total Requests',
-            data: histgramRequestCountData
+            name: 'Hits Per Sec',
+            data: histgramHitsData
         }
     ]
 });
