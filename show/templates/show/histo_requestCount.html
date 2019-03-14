@@ -1,6 +1,6 @@
 <br/>
 <div class="text-center" id="histoRequestCountMod"  style="background-color:#46C7C7;margin-bottom:10px;border-radius:10px;">
-    <button type="button" class="btn btn-outline-info btn-xs" style="background-color: Transparent;border: none;outline:none;" >
+    <button type="button" class="btn btn-outline-info btn-xs" style="background-color: Transparent;border: none;outline:none;">
         <h3 class="text-center" style="color:white;">Request Count</h3>
     </button>
 </div>
@@ -96,7 +96,7 @@ Highcharts.stockChart('histoRequestCount', {
         text : 'All'
       }
     ],
-    selected : 3,
+    selected : 0,
     inputEnabled : true
   },
 tooltip: {
@@ -130,4 +130,6 @@ tooltip: {
         }
     ]
 });
+
+document.getElementById("histoRequestCount").style.width = (screen.width-30) + "px";
 </script>

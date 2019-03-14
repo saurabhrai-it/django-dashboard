@@ -12,7 +12,7 @@ var histgramResponseTimeData = {{histoResponseTime}}
 var propertyDataResponseTime = [];
 for (var i = 0; i < histgramResponseTimeData.length; i++) {
     propertyDataResponseTime[histgramResponseTimeData[i][0]] = {
-                                             "90% Response Time": histgramResponseTimeData[i][2],                                                              "Build Number": histgramResponseTimeData[i][3]
+                                             "90% Response Time": histgramResponseTimeData[i][2],                                                                  "Build Number": histgramResponseTimeData[i][3]
                                              };
 }
 
@@ -98,7 +98,7 @@ Highcharts.stockChart('histoResponseTime', {
         text : 'All'
       }
     ],
-    selected : 3,
+    selected : 0,
     inputEnabled : true
   },
     tooltip: {
